@@ -68,14 +68,12 @@ h5_video_player
 ```
 
 ```
+// id为固定值
 <div id="jddh5video_container"></div>
 ```
 
-这个 id 为固定值，不可变更
-
-
-配置参数说明：
-
+```
+// 配置参数说明：
   sourceList:[]视频资源列表（视频链接）
   poster:''視頻poster（图片链接）
   control:true,自定义组件/原生控件(true自定义,false原生，默认自定义)
@@ -93,3 +91,4 @@ h5_video_player
     bgColor:'#ff0000' banner背景色（#ff0000，有默认色）
     btnBgColor:'#ff0000' 播放按钮背景色（#ff0000，有默认色）
   }
+```
