@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5-Video-Player</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1">
+    <meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+<body>
+    <div style="height: 5000px;">
+        <div id="jddh5video_container"></div>
+    </div>
+
+    <div id="app">
+        <p>
+            <textarea type="textarea" style="width: 99%;border-color: #e0e2e5" :rows="6" placeholder="h5页上行参数" v-model="textareaData"></textarea>
+        </p>
+
+        <p>
+          <button class="buttonStyle" type="primary" size="small" @click="defaultParamSet">参数设置示例</button>
+        </p>
+    </div>
+    
+    <script src="http://minner.jr.jd.com/h5VideoPlayer/vconsole.js"></script>
+    <script>var vConsole = new VConsole();</script>
+    <script src="./video-player.js"></script>
+    <!-- <script src="js/video-player.js"></script> -->
+    <script>
+        const option = {
+            "sourceList": [
+                "https://storage.360buyimg.com/video-hall/unloss_bankcard_introduce.mp4",
+                "https://storage.360buyimg.com/video-hall/unloss_bankcard_introduce.ogv",
+                "https://storage.360buyimg.com/video-hall/unloss_bankcard_introduce.webm"
+            ],
+            "poster": "https://m.360buyimg.com/ucpg/jfs/t1/60942/29/9298/44298/5d70cd04Ec3d3d182/047cb399d7269465.png",
+            "control": true,
+            "collapse": true,
+            "banner": {
+                "title":"测试测试",
+                "icon":true ,
+                "bgColor":"yellow",
+                "btnBgColor":"green"
+            },
+            "qidian": {
+                "playStart": {
+                    "clstag": "198R|24792",
+                    "ext": {
+                        "productid":"106000",
+                        "staid":"test"
+                    }
+                },
+                "collapseClose": {
+                    "clstag": "198R|27063",
+                    "ext": {
+                        "productid":"106000",
+                        "staid":"test"
+                    }
+                },
+                "collapsePlay": {
+                    "clstag": "198R|27062",
+                    "ext": {
+                        "productid":"106000",
+                        "staid":"test"
+                    }
+                }
+            },
+            "callback": function(video) {
+                console.log("video========>", video)
+            },
+            "playEndCallBack": function(video) {
+                console.log("video========>", video)
+            }
+        }
+        console.log('JDDH5VideoPlayer=====>>>>>',JDDH5VideoPlayer)
+        JDDH5VideoPlayer.InitH5Video(option)
+    </script>
+
+<script>
+    // var app = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     textareaData:''
+    //   },
+    //   methods:{
+    //     // 参数设置示例
+    //     defaultParamSet: function() {
+    //         console.log(JSON.parse(this.textareaData))
+    //         console.log(JDDH5VideoPlayer.InitH5Video(JSON.parse(this.textareaData)))
+    //     }
+    //   }
+    // })
+</script>
+</body>
+</html>
